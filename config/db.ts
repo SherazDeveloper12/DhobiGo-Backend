@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 async function main(){
     try {
-        const uri = process.env.MONGO_URI;
+        const uri = process.env.DATABASE_URL;
         if (!uri) {
-            console.error('MONGO_URI is not set. Create a .env file with MONGO_URI in the project root.');
+            console.error('DATABASE_URL is not set. Create a .env file with DATABASE_URL in the project root.');
             process.exit(1);
         }
         await mongoose.connect(uri);
